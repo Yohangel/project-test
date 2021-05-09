@@ -1,0 +1,9 @@
+<div class="card-columns">
+  <div *ngFor="let new of news$ | async" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ new.title }}</h5>
+      <p class="card-text">{{ (new.body.length>80)? (new.body | slice:0:80)+'..':(new.body) }}</p>
+      <a [routerLink]="['/noticias', new.id]"class="btn btn-primary">Leer más...</a>
+    </div>
+  </div>
+</div>
